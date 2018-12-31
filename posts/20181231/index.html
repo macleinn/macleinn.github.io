@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+    <base href="/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="macleinn">
+
+<meta name="description" content="">
+
+<title>Begin at the Beginning</title>
+<meta name="generator" content="Hugo 0.53" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://macleinn.github.io//css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    
+    <h3 class="home-link"><a href="https://macleinn.github.io/">Root</a></h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">Journal - Most recent posts</h3>
+        <ul>
+            
+            <li><a href="https://macleinn.github.io/posts/20181231/">Begin at the Beginning</a></li>
+            
+        </ul>
+    </div>
+    
+
+    
+    <div id="tags" class="open">
+        <h3 data-open="tags">Tags</h3>
+        <ul class="tags">
+            
+            <li><a href="/tags/hugo">hugo</a></li>
+            
+        </ul>
+    </div>
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="/categories/github">github</a></li>
+            
+            <li><a href="/categories/static-site-generator">static-site-generator</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Begin at the Beginning</h1>
+<h4>Published 12-31-2018 10:40:37</h4>
+
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="kendo5731"></a>
+<script>!function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+    if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + '://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+}(document, 'script', 'twitter-wjs');</script>
+
+<div class="fb-share-button" data-href="https://macleinn.github.io/posts/20181231/" data-layout="button"></div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en-US/sdk.js#xfbml=1&version=v2.5";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<article>
+    <p>On New Year&rsquo;s Eve of 2018, I decided to use Git to handle all my (non-private) note-keeping. My GitHub space was looking neglected (mainly because I rarely make my projects public) so I decided to freshen it up by using it to keep track of all my notes. There was another reason&hellip; I&rsquo;ve been hankering to try <a href="https://gohugo.io/">Hugo</a> out. I don&rsquo;t remember where I read about Hugo but it was around the same time I found out about <a href="https://jekyllrb.com/">Jekyll</a>. Hugo claims to be &ldquo;the world&rsquo;s fastest framework for building websites&rdquo; and&hellip; it is.</p>
+
+<blockquote>
+<p>&ldquo;Begin at the beginning,&rdquo; the King said gravely, &ldquo;and go on till you come to the end: then stop.&rdquo;</p>
+
+<blockquote>
+<p>&mdash; Lewis Carroll, <em>Alice&rsquo;s Adventures in Wonderland</em></p>
+</blockquote>
+</blockquote>
+
+<p>The day actually began with some Git-related housekeeping activities, which I&rsquo;ll detail in tomorrow&rsquo;s post, but I wanted to test the whole site generation and deployment first (so I could start writing down what I did).</p>
+
+<blockquote>
+<p>:thought_balloon: I&rsquo;m using Linux at the moment.</p>
+</blockquote>
+
+<p>Instead of using <strong>apt</strong> to install <strong>hugo</strong>, I downloaded the latest release from its GitHub project site:</p>
+
+<pre><code class="language-bash"># download the latest version, which at this time is v0.53
+wget https://github.com/gohugoio/hugo/releases/download/v0.53/hugo_0.53_Linux-64bit.deb
+
+# install
+sudo dpkg -i hugo_0.53_Linux-64bit.deb
+</code></pre>
+
+<p>Next, I followed (most of) the steps on Hugo&rsquo;s <a href="https://gohugo.io/getting-started/quick-start/">Quick Start</a> page. The only difference is the theme I chose. Instead of <strong>ananke</strong>, I went with <a href="https://themes.gohugo.io/hugo-code-editor-theme/"><strong>Code Editor</strong></a> because it reminded me of the Pip-Boy layout from <a href="https://en.wikipedia.org/wiki/Fallout_(series)"><em>Fallout</em></a> even though it was really inspired by the Atom editor design. The command was:</p>
+
+<pre><code class="language-bash">git submodule add https://github.com/aubm/hugo-code-editor-theme.git themes/code-editor
+</code></pre>
+
+<p>As an appendix to my Hugo chapter, I decided to start my GitHub User Page at <a href="https://macleinn.github.io">https://macleinn.github.io</a> and host the generated content from the Hugo project. Again, I followed the steps provided by Hugo. The only change I made to the steps on <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">GitHub hosting</a> was a tiny one (and suggested by a comment in the provided code). The change is in <strong>deploy.sh</strong> script, which has been committed.</p>
+
+<p>The whole experiment took no more than 2 hours, including the time spent on choosing a theme.</p>
+
+<p>A final note on Git submodules: After cloning the project to a new workspace, the Git submodules (<strong>themes/code-editor</strong> and <strong>public</strong>) need to be initialised. This can be done like so:</p>
+
+<pre><code class="language-bash">git submodule update --init --recursive
+</code></pre>
+
+<p>I actually have to learn a bit more about Git submodules because I had to <a href="https://stackoverflow.com/questions/1030169/easy-way-to-pull-latest-of-all-git-submodules">stackoverflow that one</a>.</p>
+
+<p>That&rsquo;s all for the last day of the year.</p>
+
+</article>
+
+
+
+</div>
+</div>
+<script src="https://macleinn.github.io//js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+
