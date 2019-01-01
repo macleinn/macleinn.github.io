@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Journal</title>
-    <link>https://macleinn.github.io/</link>
-    <description>Recent content on Journal</description>
+    <title>Identity on Journal</title>
+    <link>https://macleinn.github.io/categories/identity/</link>
+    <description>Recent content in Identity on Journal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 01 Jan 2019 09:43:16 +0000</lastBuildDate>
     
-	<atom:link href="https://macleinn.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://macleinn.github.io/categories/identity/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://macleinn.github.io/posts/20190101/</guid>
       <description>How do you know who you&amp;rsquo;re talking to is really the person you think you&amp;rsquo;re talking to? I came across Keybase recently and liked their way of securing chat messages between people on the internet. To verify the identity of people with whom you establish contact online, Keybase checks a selection of their online identities. (For more, check out https://keybase.io/blog/keybase-chat.) I digress. It reminded me that I have yet to set up a GPG key to sign my commits to public repositories.</description>
-    </item>
-    
-    <item>
-      <title>Begin at the Beginning</title>
-      <link>https://macleinn.github.io/posts/20181231/</link>
-      <pubDate>Mon, 31 Dec 2018 10:40:37 +0000</pubDate>
-      
-      <guid>https://macleinn.github.io/posts/20181231/</guid>
-      <description>On New Year&amp;rsquo;s Eve of 2018, I decided to use Git to handle all my (non-private) note-keeping. My GitHub space was looking neglected (mainly because I rarely make my projects public) so I decided to freshen it up by using it to keep track of all my notes. There was another reason&amp;hellip; I&amp;rsquo;ve been hankering to try Hugo out. I don&amp;rsquo;t remember where I read about Hugo but it was around the same time I found out about Jekyll.</description>
     </item>
     
   </channel>

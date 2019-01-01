@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://macleinn.github.io/posts/20190101/</loc>
+    <lastmod>2019-01-01T09:43:16+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://macleinn.github.io/posts/20181231/</loc>
     <lastmod>2018-12-31T10:40:37+00:00</lastmod>
   </url>
@@ -14,7 +19,19 @@
   
   <url>
     <loc>https://macleinn.github.io/categories/github/</loc>
-    <lastmod>2018-12-31T10:40:37+00:00</lastmod>
+    <lastmod>2019-01-01T09:43:16+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://macleinn.github.io/categories/gitlab/</loc>
+    <lastmod>2019-01-01T09:43:16+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://macleinn.github.io/tags/gpg/</loc>
+    <lastmod>2019-01-01T09:43:16+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -25,14 +42,20 @@
   </url>
   
   <url>
+    <loc>https://macleinn.github.io/categories/identity/</loc>
+    <lastmod>2019-01-01T09:43:16+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://macleinn.github.io/</loc>
-    <lastmod>2018-12-31T10:40:37+00:00</lastmod>
+    <lastmod>2019-01-01T09:43:16+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://macleinn.github.io/posts/</loc>
-    <lastmod>2018-12-31T10:40:37+00:00</lastmod>
+    <lastmod>2019-01-01T09:43:16+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -44,7 +67,7 @@
   
   <url>
     <loc>https://macleinn.github.io/tags/</loc>
-    <lastmod>2018-12-31T10:40:37+00:00</lastmod>
+    <lastmod>2019-01-01T09:43:16+00:00</lastmod>
     <priority>0</priority>
   </url>
   

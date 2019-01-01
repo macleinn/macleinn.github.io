@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+<head>
+    <base href="/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="macleinn">
+
+<meta name="description" content="">
+
+<title>Who are you really?</title>
+<meta name="generator" content="Hugo 0.53" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/pojoaque.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+<link  href="https://macleinn.github.io//css/theme.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    
+    <h3 class="home-link"><a href="https://macleinn.github.io/">Journal</a></h3>
+    <div id="last-posts" class="open">
+        <h3 data-open="last-posts">Recent entries</h3>
+        <ul>
+            
+            <li><a href="https://macleinn.github.io/posts/20190101/">Who are you really?</a></li>
+            
+            <li><a href="https://macleinn.github.io/posts/20181231/">Begin at the Beginning</a></li>
+            
+        </ul>
+    </div>
+    
+
+    
+    <div id="tags" class="open">
+        <h3 data-open="tags">Tags</h3>
+        <ul class="tags">
+            
+            <li><a href="/tags/gpg">gpg</a></li>
+            
+            <li><a href="/tags/hugo">hugo</a></li>
+            
+        </ul>
+    </div>
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="/categories/github">github</a></li>
+            
+            <li><a href="/categories/gitlab">gitlab</a></li>
+            
+            <li><a href="/categories/identity">identity</a></li>
+            
+            <li><a href="/categories/static-site-generator">static-site-generator</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Who are you really?</h1>
+<h4>Published 2019-01-01 09:43:16 UTC</h4>
+
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="kendo5731"></a>
+<script>!function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+    if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + '://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+}(document, 'script', 'twitter-wjs');</script>
+
+<div class="fb-share-button" data-href="https://macleinn.github.io/posts/20190101/" data-layout="button"></div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en-US/sdk.js#xfbml=1&version=v2.5";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<article>
+    
+
+<p>How do you know who you&rsquo;re talking to is really the person you think you&rsquo;re talking to? I came across <a href="https://keybase.io/">Keybase</a> recently and liked their way of securing chat messages between people on the internet. To verify the identity of people with whom you establish contact online, Keybase checks a selection of their online identities. (For more, check out <a href="https://keybase.io/blog/keybase-chat.">https://keybase.io/blog/keybase-chat.</a>)  I digress. It reminded me that I have yet to set up a GPG key to sign my commits to public repositories.</p>
+
+<blockquote>
+<p>Rick Blaine: &ldquo;Who are you really and what were you before? What did you do and what did you think?&rdquo;</p>
+
+<blockquote>
+<p>&mdash; <em>Casablanca</em> (1942)</p>
+</blockquote>
+</blockquote>
+
+<h3 id="the-gist">The Gist</h3>
+
+<p>While your repository host (GitHub, GitLab etc.) knows it&rsquo;s you who&rsquo;ve pushed the commits once an authenticated session has been established, no one else does. To ensure others know that it&rsquo;s you who&rsquo;ve made those commits, you can &ldquo;sign&rdquo; them then the commits can be verified. The most popular way of doing this is to use GNU Privacy Guard (GPG).</p>
+
+<hr />
+
+<p>🔔 I used Windows Subsystem for Linux on Windows 10 today. 🔔</p>
+
+<hr />
+
+<p><strong>gpg</strong> is usually installed in most Linux distributions so I didn&rsquo;t have to install it myself. The first thing I did was:</p>
+
+<pre><code class="language-bash">gpg --gen-key
+</code></pre>
+
+<p>This creates a GPG key with the default settings. For a more concise way of generating a GPG key, <a href="https://help.github.com/articles/generating-a-new-gpg-key/">this GitHub page</a> has the steps. After generating the key, I copied and pasted the public key to GitHub.com.</p>
+
+<p>To back up the key and/or use it on another machine, I did the following:</p>
+
+<pre><code class="language-bash">gpg --export-secret-keys MY_KEY_ID &gt; gpg-key.asc
+</code></pre>
+
+<p>As recommended by most guides, I created a revocation certificate as well.</p>
+
+<pre><code class="language-bash">gpg --output gpg-revocation.asc --gen-revoke MY_KEY_ID
+</code></pre>
+
+<p>To import the back-up key, I did the following:</p>
+
+<pre><code class="language-bash">gpg --import gpg-key.asc
+gpg --edit-key MY_KEY_ID
+</code></pre>
+
+<p>This will be followed by a prompt from GPG.</p>
+
+<pre><code class="language-bash">gpg&gt; trust
+Your decision? 5 (Ultimate trust)
+</code></pre>
+
+<p>That didn&rsquo;t take long. Just one more step&hellip; update the Git global configurations so I don&rsquo;t have to remember to tell Git to sign each commit.</p>
+
+<pre><code class="language-bash">git config --global user.signingkey MY_KEY_ID
+git config --global commit.gpgsign true
+
+# ensure that the email set for git is the same
+# as the one used for the key
+git config --global user.email MY_EMAIL
+</code></pre>
+
+<p>That&rsquo;s it! Now every time I make a commit, it&rsquo;s also signed.</p>
+
+<h3 id="notes">Notes</h3>
+
+<ul>
+<li>To verify the signature of a commit, this can be done like so:
+<code>bash
+git log --show-signature -1
+</code></li>
+
+<li><p>I encountered an error during a git commit and found that I had to do the following:</p>
+
+<pre><code class="language-bash">export GPG_TTY=$(tty)
+</code></pre>
+
+<p>Instead of doing this every shell session, I added this to the end of ~/.bashrc. An interesting reading about this can be found <a href="https://stackoverflow.com/questions/41052538/git-error-gpg-failed-to-sign-data">here</a>.</p></li>
+</ul>
+
+</article>
+
+
+
+</div>
+</div>
+<script src="https://macleinn.github.io//js/theme.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+
