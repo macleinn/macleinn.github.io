@@ -23,9 +23,9 @@
 <div class="col-md-3 menu">
     <nav class="col-md-3">
     
-    <h3 class="home-link"><a href="https://macleinn.github.io/">Root</a></h3>
+    <h3 class="home-link"><a href="https://macleinn.github.io/">Journal</a></h3>
     <div id="last-posts" class="open">
-        <h3 data-open="last-posts">Journal - Most recent posts</h3>
+        <h3 data-open="last-posts">Recent entries</h3>
         <ul>
             
             <li><a href="https://macleinn.github.io/posts/20181231/">Begin at the Beginning</a></li>
@@ -63,7 +63,7 @@
 <div class="col-md-9 content">
 
 <h1>Begin at the Beginning</h1>
-<h4>Published 12-31-2018 10:40:37</h4>
+<h4>Published 2018-12-31 10:40:37 UTC</h4>
 
 <a href="https://twitter.com/share" class="twitter-share-button" data-via="kendo5731"></a>
 <script>!function (d, s, id) {
@@ -87,7 +87,9 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <article>
-    <p>On New Year&rsquo;s Eve of 2018, I decided to use Git to handle all my (non-private) note-keeping. My GitHub space was looking neglected (mainly because I rarely make my projects public) so I decided to freshen it up by using it to keep track of all my notes. There was another reason&hellip; I&rsquo;ve been hankering to try <a href="https://gohugo.io/">Hugo</a> out. I don&rsquo;t remember where I read about Hugo but it was around the same time I found out about <a href="https://jekyllrb.com/">Jekyll</a>. Hugo claims to be &ldquo;the world&rsquo;s fastest framework for building websites&rdquo; and&hellip; it is.</p>
+    
+
+<p>On New Year&rsquo;s Eve of 2018, I decided to use Git to handle all my (non-private) note-keeping. My GitHub space was looking neglected (mainly because I rarely make my projects public) so I decided to freshen it up by using it to keep track of all my notes. There was another reason&hellip; I&rsquo;ve been hankering to try <a href="https://gohugo.io/">Hugo</a> out. I don&rsquo;t remember where I read about Hugo but it was around the same time I found out about <a href="https://jekyllrb.com/">Jekyll</a>. Hugo claims to be &ldquo;the world&rsquo;s fastest framework for building websites&rdquo; and&hellip; it is.</p>
 
 <blockquote>
 <p>&ldquo;Begin at the beginning,&rdquo; the King said gravely, &ldquo;and go on till you come to the end: then stop.&rdquo;</p>
@@ -97,11 +99,15 @@
 </blockquote>
 </blockquote>
 
+<h3 id="the-gist">The Gist</h3>
+
 <p>The day actually began with some Git-related housekeeping activities, which I&rsquo;ll detail in tomorrow&rsquo;s post, but I wanted to test the whole site generation and deployment first (so I could start writing down what I did).</p>
 
-<blockquote>
-<p>:thought_balloon: I&rsquo;m using Linux at the moment.</p>
-</blockquote>
+<hr />
+
+<p>🔔 I used Linux today. 🔔</p>
+
+<hr />
 
 <p>Instead of using <strong>apt</strong> to install <strong>hugo</strong>, I downloaded the latest release from its GitHub project site:</p>
 
@@ -112,25 +118,30 @@ wget https://github.com/gohugoio/hugo/releases/download/v0.53/hugo_0.53_Linux-64
 sudo dpkg -i hugo_0.53_Linux-64bit.deb
 </code></pre>
 
-<p>Next, I followed (most of) the steps on Hugo&rsquo;s <a href="https://gohugo.io/getting-started/quick-start/">Quick Start</a> page. The only difference is the theme I chose. Instead of <strong>ananke</strong>, I went with <a href="https://themes.gohugo.io/hugo-code-editor-theme/"><strong>Code Editor</strong></a> because it reminded me of the Pip-Boy layout from <a href="https://en.wikipedia.org/wiki/Fallout_(series)"><em>Fallout</em></a> even though it was really inspired by the Atom editor design. The command was:</p>
+<p>Next, I followed (most of) the steps on Hugo&rsquo;s <a href="https://gohugo.io/getting-started/quick-start/">Quick Start</a> page. The only difference is the theme I chose. Instead of <strong>ananke</strong>, I went with <a href="https://themes.gohugo.io/hugo-code-editor-theme/"><strong>Code Editor</strong></a> because it reminded me of the Pip-Boy layout from <a href="https://en.wikipedia.org/wiki/Fallout_(series)"><em>Fallout</em></a> even though it was really inspired by the Atom editor design. In case I needed to customise it, I forked the repository from <a href="https://github.com/aubm/hugo-code-editor-theme.git">https://github.com/aubm/hugo-code-editor-theme.git</a> before adding the new fork as a submodule:</p>
 
-<pre><code class="language-bash">git submodule add https://github.com/aubm/hugo-code-editor-theme.git themes/code-editor
+<pre><code class="language-bash">git submodule add git@github.com:macleinn/hugo-code-editor-theme.git themes/code-editor
 </code></pre>
 
 <p>As an appendix to my Hugo chapter, I decided to start my GitHub User Page at <a href="https://macleinn.github.io">https://macleinn.github.io</a> and host the generated content from the Hugo project. Again, I followed the steps provided by Hugo. The only change I made to the steps on <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">GitHub hosting</a> was a tiny one (and suggested by a comment in the provided code). The change is in <strong>deploy.sh</strong> script, which has been committed.</p>
 
 <p>The whole experiment took no more than 2 hours, including the time spent on choosing a theme.</p>
 
-<p>A final note on Git submodules: After cloning the project to a new workspace, the Git submodules (<strong>themes/code-editor</strong> and <strong>public</strong>) need to be initialised. This can be done like so:</p>
+<h3 id="notes">Notes</h3>
+
+<ul>
+<li><p>After cloning the project to a new workspace, the Git submodules (<strong>themes/code-editor</strong> and <strong>public</strong>) need to be re-initialised. This can be done like so:</p>
 
 <pre><code class="language-bash">git submodule update --init --recursive
 </code></pre>
 
-<p>I actually have to learn a bit more about Git submodules because I had to <a href="https://stackoverflow.com/questions/1030169/easy-way-to-pull-latest-of-all-git-submodules">stackoverflow that one</a>.</p>
+<p>I actually have to learn a bit more about Git submodules because I had to <a href="https://stackoverflow.com/questions/1030169/easy-way-to-pull-latest-of-all-git-submodules">stackoverflow that one</a>.</p></li>
 
-<p>Additionally, in the <strong>public</strong> (git submodule) directory, I had to update the HEAD position to the master branch by doing <code>git checkout master</code> so that I can push new updates.</p>
+<li><p>Additionally, in the <strong>public</strong> (git submodule) directory, I had to update the HEAD position to the master branch so that I can push new updates:</p>
 
-<p>Well, that&rsquo;s all for the last day of the year.</p>
+<pre><code class="language-bash">git checkout master
+</code></pre></li>
+</ul>
 
 </article>
 
