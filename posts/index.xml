@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Journal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Jan 2019 09:43:16 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Jan 2019 09:52:02 +0000</lastBuildDate>
     
 	<atom:link href="https://macleinn.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Remember, Remember</title>
+      <link>https://macleinn.github.io/posts/20190102/</link>
+      <pubDate>Wed, 02 Jan 2019 09:52:02 +0000</pubDate>
+      
+      <guid>https://macleinn.github.io/posts/20190102/</guid>
+      <description>Part of the learning process is memorising. Whether it&amp;rsquo;s an artistic or scientific discipline, practice reinforces memory and strengthens understanding. Dance choreography, for example, requires practice to commit movements into muscle memory before it can be performed with precision and emotions.1 For some reason, I thought it&amp;rsquo;d be fun to learn CSS3 animation by showing dancer positions in Regency dances. It&amp;rsquo;s going to take me a while to take it to demo level so this will be covered over multiple entries.</description>
+    </item>
     
     <item>
       <title>Who are you really?</title>
